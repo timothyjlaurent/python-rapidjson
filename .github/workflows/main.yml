@@ -79,7 +79,7 @@ jobs:
           pytest tests
 
   build_wheels:
-    name: Build wheels on ${{matrix.arch}} for ${{ matrix.os }}
+    name: Build wheels on ${{matrix.arch}} for ${{ matrix.os }} 
     runs-on: ${{ matrix.os }}
     strategy:
       matrix:
