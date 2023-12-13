@@ -111,6 +111,11 @@ jobs:
         if:  ${{ matrix.arch == 'aarch64' || matrix.arch == 'ppc64le' }}
         name: Set up QEMU
 
+      - name: Install pipx
+        if: ${{ matrix.os == 'macos-13-xlarge' }}
+        run: |
+          pip install pipx
+
       - name: Build wheels
         uses: pypa/cibuildwheel@v2.16.2
         env:
